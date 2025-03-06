@@ -1,0 +1,120 @@
+*{
+    margin: 0;
+    padding:0;
+}
+
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    cursor: pointer;
+}
+
+.logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo img{
+    width: 50px;
+    height: 50px;
+    border: 1px solid white;
+    border-radius: 10px
+}
+
+.nav-list{
+    width: 50%;
+    display: flex;
+    align-items: center;
+}
+.nav-list li{
+    list-style: none;
+    padding: 26px 30px;
+}
+
+.nav-list li a{
+    text-decoration: none;
+    color: rgb(249, 243, 243);
+}
+
+.nav-list li a:hover{
+    text-decoration: none;
+    color: rgb(6, 37, 195);
+}
+
+.rightNav{
+    /*background-color: blueviolet;*/
+    width: 50%;
+    text-align: right;
+    padding: 0 23px;
+}
+
+#search{
+    padding: 5px;
+    font-size: 17px;
+    border: 2px solid gray;
+    border-radius: 9px;
+}
+
+.background{
+    background:rgba(0, 0, 0, 0.7) url("../img/websit.png");
+    background-size: cover;
+    background-blend-mode: darken;
+}
+
+
+.firstSection{
+    height:100vh;
+}
+
+.box-main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: auto;
+    height: 75%;
+}
+
+.firstHalf{
+    width: 10%;
+    display: flex;
+    justify-content: center;
+}
+ 
+.secondHalf{
+    width: 30%;
+}
+
+.secondHalf img{
+    width: 40%;
+    height: 50%;
+    border-radius: 150px;
+}
+
+.text-big{
+    font-size: 15px;
+}
+
+.btn{
+    background: none;
+    color:rgb(17, 216, 6);
+    cursor: pointer;
+}
+
+.btn-sm{
+   padding :5px 10 px;
+   vertical-align: middle; 
+}
+
+.secRight{
+    height:500px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin:auto;
+    max-width: 80%;
+}

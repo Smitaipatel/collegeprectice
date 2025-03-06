@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        table {
+                border-collapse: collapse;
+            }
+            td {
+                width: 50px;
+                height: 50px;
+                border: 1px solid black;
+                text-align: center;
+
+            }
+    </style>
+</head>
+<body>
+
+<table id="colorTable">
+  <tr>
+    <td colspan="2">A</td>
+    <td colspan="5">B</td> 
+  </tr>
+  <tr>
+    <td rowspan="2">C</td>
+    <td rowspan="2">D</td>
+    <td rowspan="2">E</td>
+    <td rowspan="2">F</td>
+    <td rowspan="2">G</td>
+    <td rowspan="2">H</td>
+  </tr>
+
+  <tr>
+  <td rowspan="3">J</td>
+  </tr>
+
+  <tr>
+    <td rowspan="2">K</td>
+    <td colspan="1">M</td>
+    <td colspan="2">N</td>
+    <td colspan="2">I</td>
+  </tr>
+  <tr>
+    <td colspan="1">L</td>
+    <td colspan="1">P</td>
+    <td colspan="1">O</td>
+    <td colspan="1">I</td>
+    <td colspan="1">H</td>
+  </tr>  
+</table>
+<script>
+    function getRandomColor() {
+        const letters = '0123456789ABCDEF';
+        let color = '#';
+        for (let i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
+    const cells = document.querySelectorAll('#colorTable td');
+    cells.forEach(cell => {
+        cell.style.backgroundColor = getRandomColor();
+    });
+</script>
+</body>
+</html>

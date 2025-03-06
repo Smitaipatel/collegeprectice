@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy New Year 2025</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to bottom, #000428, #004e92);
+            color: white;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+        }
+
+        h1 {
+            font-size: 4rem;
+            text-shadow: 0 0 20px #f9d423, 0 0 40px #ff4e50;
+        }
+
+        .fireworks {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .firework {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: transparent;
+            border-radius: 50%;
+            animation: explode 1.5s ease-out infinite;
+        }
+
+        @keyframes explode {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(3);
+                opacity: 0;
+            }
+        }
+
+        @keyframes shimmer {
+            0%, 100% {
+                opacity: 0.8;
+            }
+            50% {
+                opacity: 1;
+            }
+        }
+
+        .shimmer {
+            animation: shimmer 2s infinite;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="shimmer">Happy New Year 2025!</h1>
+    <div class="fireworks">
+        <div class="firework" style="left: 20%; top: 30%; background: #f9d423;"></div>
+        <div class="firework" style="left: 50%; top: 50%; background: #ff4e50;"></div>
+        <div class="firework" style="left: 70%; top: 20%; background: #76b852;"></div>
+    </div>
+    <audio src="happy_new_year_song.mp3" autoplay loop></audio>
+    <script>
+        const fireworksContainer = document.querySelector('.fireworks');
+
+        function createFirework() {
+            const firework = document.createElement('div');
+            firework.classList.add('firework');
+            firework.style.left = Math.random() * 100 + '%';
+            firework.style.top = Math.random() * 100 + '%';
+            firework.style.background = `hsl(${Math.random() * 360}, 100%, 50%)`;
+            firework.style.animationDuration = Math.random() * 1.5 + 1 + 's';
+
+            fireworksContainer.appendChild(firework);
+
+            setTimeout(() => {
+                firework.remove();
+            }, 1500);
+        }
+
+        setInterval(createFirework, 500);
+    </script>
+</body>
+</html>

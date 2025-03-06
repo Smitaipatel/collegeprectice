@@ -1,0 +1,12 @@
+<html>
+<head>
+<title>My First Page</title>
+</head>
+<body bgcolor=black>
+<b>
+Hello everyone,
+I am a student of B.E. 5th IT.
+</b>
+
+</body>
+</html>
