@@ -12,7 +12,7 @@ public class hgj {
         // }
          else
             System.out.println("y is biger than x");
-        
+
         System.out.println(x);
         System.out.println(y);
 
