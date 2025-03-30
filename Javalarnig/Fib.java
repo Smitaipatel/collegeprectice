@@ -20,7 +20,7 @@ public class Fib {
         //int N=10;
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter the number of terms: ");
-        int A = scanner.nextInt();
+        int N = scanner.nextInt();
         
         Fibonacci(12);
     }
