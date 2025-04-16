@@ -1,7 +1,7 @@
 body {
   font-family: Arial, sans-serif;
   padding: 20px;
-  background-color: rgb(235, 239, 240);
+  background-color: rgb(249, 254, 255);
 }
 
 .block-entry {
@@ -25,7 +25,7 @@ body {
   font-size: 16px;
   align-items: center;
   box-sizing: border-box;
-  border: 1px solid #0934f3;
+  border: 1px solid #0d09f3;
   border-radius: 6px;
 }
 input[type="submit"] {
@@ -33,7 +33,7 @@ input[type="submit"] {
     width: 10%;
     padding: 10px;
     background-color: #4CAF50;
-    color: white;
+    color: rgb(252, 255, 254);
     border: none;
     border-radius: 4px;
     margin-top: 20px;
