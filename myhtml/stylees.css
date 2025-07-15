@@ -1,0 +1,25 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f4f8;
+}
+
+.navbar {
+  background-color: #1d3557;
+  color: white;
+}
+
+.btn {
+  background-color: #e63946;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  cursor: pointer;
+}
+
+.firstSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px;
+  background: linear-gradient(to right, #a8dadc, #f1faee);
+}
