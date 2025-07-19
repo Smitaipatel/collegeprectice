@@ -442,12 +442,14 @@ video {
 }
 .menu-section {
   margin-bottom: 30px;
+  background-color: darkolivegreen;
 }
 
 .menu-section h2 {
   font-size: 1.8rem;
   margin-bottom: 10px;
-  border-bottom: 2px solid #ccc;
+  border-bottom: 2px solid #e57777;
+  background: linear-gradient(to left bottom, #119f3a 0%, #a3d421 80%);
   padding-bottom: 5px;
 }
 
@@ -459,4 +461,23 @@ video {
 .menu-section ul li {
   font-size: 1.2rem;
   margin: 8px 0;
+}
+.menu-section {
+  margin: 30px 0;
+}
+
+.menu-section h2 {
+  font-size: 1.6rem;
+  border-bottom: 2px solid #e48585;
+  padding-bottom: 5px;
+}
+
+.menu-section ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.menu-section ul li {
+  font-size: 1.2rem;
+  margin: 10px 0;
 }
