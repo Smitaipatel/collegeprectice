@@ -481,3 +481,25 @@ video {
   font-size: 1.2rem;
   margin: 10px 0;
 }
+/* style.css */
+#page1 h1 {
+  font-size: 60px;
+  text-align: center;
+  margin-top: 100px;
+}
+
+#page1 p, #page2 p, #page2 ul {
+  max-width: 800px;
+  margin: 20px auto;
+  text-align: center;
+  font-size: 18px;
+}
+
+#page2 ul {
+  list-style: none;
+  padding: 0;
+}
+
+#page2 ul li {
+  margin: 10px 0;
+}
