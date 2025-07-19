@@ -440,3 +440,23 @@ video {
   line-height: 20px;
   margin-bottom: 8px;
 }
+.menu-section {
+  margin-bottom: 30px;
+}
+
+.menu-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 5px;
+}
+
+.menu-section ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.menu-section ul li {
+  font-size: 1.2rem;
+  margin: 8px 0;
+}
