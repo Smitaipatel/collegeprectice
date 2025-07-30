@@ -11,5 +11,5 @@ CONNECTION_STRING = f"""
         DATABASE={DATABASE_NAME};
         Trust_Connection=yes;
 """
-conn = odbc.connect(connection_string)
+conn = odbc.connect(CONNECTION_STRING)
 print(conn)
