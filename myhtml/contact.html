@@ -1,41 +1,24 @@
-<!-- contact.html -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact Us - Sidcup Family Golf</title>
-    <form action="app.py" method="post" class="contact-form">
-    <link rel="stylesheet" href="style.css" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css"
-      rel="stylesheet"
-    />
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet" />
   </head>
   <body>
     <div id="nav">
-      <img
-        src="https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/logo-white.svg"
-        alt=""
-      />
-      <h4><a href="index.html">Home</a></h4>
-      <!--<h4><a href="golf-lessons.html">Golf Lessons</a></h4>
-      <h4><a href="adventure golf.html">Adventure Golf</a></h4>
-      <h4><a href="menu.html">Coffee Shop</a></h4>
-      <h4><a href="leagues.html">Leagues</a></h4>
-      <h4><a href="contact.html" style="color: yellow;">Contact</a></h4>-->
+      <img src="https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/logo-white.svg" alt="" />
+      <h4><a href="/">Home</a></h4>
     </div>
 
-    <video
-      autoplay
-      loop
-      muted
-      src="videos/hero5.mp4"
-    ></video>
+    <video autoplay loop muted src="{{ url_for('static', filename='videos/hero5.mp4') }}"></video>
+
     <div class="contact-container">
       <h1>Contact Us</h1>
       <p>We'd love to hear from you! Please fill out the form below.</p>
-      <form action="#" method="post" class="contact-form">
+      <form action="/" method="post" class="contact-form">
         <label for="name">Full Name</label>
         <input type="text" id="name" name="name" required />
 
@@ -47,53 +30,8 @@
 
         <button type="submit">Send Message</button>
       </form>
+
+      <p style="color: white;">{{ msg }}</p>
     </div>
-
-    <style>
-        body {
-            background-color: #2a8be0; 
-            font-family: Arial, sans-serif;
-        }
-      .contact-container {
-        max-width: 700px;
-        margin: 100px auto;
-        padding: 40px;
-        background-color: #3810ec;
-        border-radius: 12px;
-      }
-
-      .contact-form {
-        display: flex;
-        flex-direction: column;
-      }
-
-      .contact-form label {
-        margin-top: 15px;
-        font-weight: bold;
-      }
-
-      .contact-form input,
-      .contact-form textarea {
-        padding: 12px;
-        margin-top: 5px;
-        border: 1px solid #2acbd6;
-        border-radius: 8px;
-      }
-
-      .contact-form button {
-        margin-top: 20px;
-        padding: 14px;
-        border: none;
-        background-color: #008000;
-        color: rgb(167, 244, 143);
-        font-size: 16px;
-        border-radius: 8px;
-        cursor: pointer;
-      }
-
-      .contact-form button:hover {
-        background-color: #005c00;
-      }
-    </style>
   </body>
 </html>

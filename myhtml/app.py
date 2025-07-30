@@ -1,38 +1,15 @@
-from flask import Flask, request, render_template_string
+from flask import Flask, request, render_template
 import pyodbc
 
 app = Flask(__name__)
 
-# SQL Server connection config
-server = 'DESKTOP-65JLCDI\SQLEXPRESS'  # or your server name
-database = 'SidcupGolf'
-username = 'sa'
-password = 'patel'
+# SQL Server connection string
 conn_str = (
-    f'DRIVER={{ODBC Driver 17 for SQL Server}};'
-    f'SERVER={server};DATABASE={database};UID={username};PWD={password}'
+    'DRIVER={ODBC Driver 17 for SQL Server};'
+    'SERVER=localhost\\SQLEXPRESS;'
+    'DATABASE=SidcupGolf;'
+    'Trusted_Connection=yes;'
 )
-
-# HTML template with form
-form_html = '''
-<!DOCTYPE html>
-<html>
-<head><title>Contact</title></head>
-<body>
-    <h2>Contact Form</h2>
-    <form method="POST">
-        <label>Name:</label><br>
-        <input type="text" name="name" required><br>
-        <label>Email:</label><br>
-        <input type="email" name="email" required><br>
-        <label>Message:</label><br>
-        <textarea name="message" rows="4" required></textarea><br><br>
-        <button type="submit">Submit</button>
-    </form>
-    <p>{{ msg }}</p>
-</body>
-</html>
-'''
 
 @app.route('/', methods=['GET', 'POST'])
 def contact():
@@ -55,7 +32,7 @@ def contact():
         except Exception as e:
             msg = f"Error: {e}"
 
-    return render_template_string(form_html, msg=msg)
+    return render_template("contact.html", msg=msg)
 
 if __name__ == '__main__':
     app.run(debug=True)

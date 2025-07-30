@@ -1,10 +1,10 @@
 <?php
 // SQL Server connection details
-$serverName = "SmitPractical"; // or "YOUR_SERVER_NAME"
+$serverName = "localhost"; // or "YOUR_SERVER_NAME"
 $connectionOptions = [
-    "Database" => "ContactMessages",
-    "Uid" => "sa",
-    "PWD" => "patel"
+    "Database" => "YourDatabaseName",
+    "Uid" => "YourUsername",
+    "PWD" => "YourPassword"
 ];
 
 // Get form values
@@ -13,7 +13,7 @@ $email = $_POST['email'];
 $message = $_POST['message'];
 
 // Connect to SQL Server
-$conn = sqlsrv_connect($Smitpractical, $connectionOptions);
+$conn = sqlsrv_connect($serverName, $connectionOptions);
 
 if (!$conn) {
     die(print_r(sqlsrv_errors(), true));
