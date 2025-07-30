@@ -4,10 +4,10 @@ import pyodbc
 app = Flask(__name__)
 
 # SQL Server connection config
-server = 'localhost\\SQLEXPRESS'  # or your server name
+server = 'DESKTOP-65JLCDI\SQLEXPRESS'  # or your server name
 database = 'SidcupGolf'
-username = 'your_sql_user'
-password = 'your_password'
+username = 'sa'
+password = 'patel'
 conn_str = (
     f'DRIVER={{ODBC Driver 17 for SQL Server}};'
     f'SERVER={server};DATABASE={database};UID={username};PWD={password}'
