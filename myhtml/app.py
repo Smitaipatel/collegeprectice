@@ -4,7 +4,7 @@ import pyodbc
 app = Flask(__name__)
 
 conn_str = (
-    'DRIVER={ODBC Driver 18 for SQL Server};'
+    'DRIVER={ODBC Driver 17 for SQL Server};'
     'SERVER=DESKTOP-65JLCDI\SQLEXPRESS;'
     'DATABASE=SmitPractical;'
     'Trusted_Connection=yes;'
