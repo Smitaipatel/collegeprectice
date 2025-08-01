@@ -1,0 +1,88 @@
+<html>
+    <body>
+<section id="gallery" class="py-16 fade-in">
+    <div class="container mx-auto px-4">
+        <h2 class="section-title text-3x3 font-bold text-center mb-4">Gallery</h2>
+        <h4 class="text-center mb-2 text-blue-600 underline">
+            <a href="webshitt.html">← Home</a>
+        </h4>
+        <p class="text-center mb-8 max-w-2xl mx-auto">Explore our past performances and events</p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- 9 Images total for 3x3 grid -->
+            <div>
+                <img src="img/web7.jpg" alt="Drama team performing on stage" class="w-full h-64 object-cover rounded-lg shadow-md">
+            </div>
+            <div>
+                <img src="img/web8.jpg" alt="Street performance with Bhavai artists" class="w-full h-64 object-cover rounded-lg shadow-md">
+            </div>
+            <div>
+                <img src="img/web9.jpg" alt="Puppet show entertaining children" class="w-full h-64 object-cover rounded-lg shadow-md">
+            </div>
+            <div>
+                <img src="img/web9.jpg" alt="Puppet show entertaining children" class="w-full h-64 object-cover rounded-lg shadow-md">
+            </div>
+            <div>
+                <img src="img/web9.jpg" alt="Puppet show entertaining children" class="w-full h-64 object-cover rounded-lg shadow-md">
+            </div>
+            <div>
+                <img src="img/web9.jpg" alt="Puppet show entertaining children" class="w-full h-64 object-cover rounded-lg shadow-md">
+            </div>
+        </div>
+
+        <!-- Optional View More button -->
+        <!--
+        <div class="text-center mt-8">
+            <p class="mb-4">We regularly update our gallery with photos and videos of our programs.</p>
+            <button class="bg-purple-600 text-white px-6 py-2 rounded-md hover:bg-purple-700 transition">View More</button>
+        </div>
+        -->
+    </div>
+</section>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Scroll animation for fade-in elements
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        const fadeInObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        fadeElements.forEach(el => { fadeInObserver.observe(el); });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId.length > 1) {  // Skip if href is just #
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+        
+        // Mobile menu toggle
+        const mobileMenuButton = document.querySelector('button.md\\:hidden');
+        if (mobileMenuButton) {
+            mobileMenuButton.addEventListener('click', function() {
+                const navLinks = document.querySelector('nav .hidden.md\\:flex');
+                if (navLinks) {
+                    navLinks.classList.toggle('hidden');
+                    navLinks.classList.toggle('flex');
+                }
+            });
+        }
+    });
+        </script>
+    </body>
+</html>
