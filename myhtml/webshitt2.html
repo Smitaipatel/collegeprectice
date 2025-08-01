@@ -83,15 +83,36 @@
             box-shadow: 0 15px 30px rgba(0,0,0,0.2);
         }
 
+        /* Fade-in animations */
         .fade-in {
+            opacity: 0;
+            transition: all 0.8s ease;
+        }
+        
+        .fade-in-up {
             opacity: 0;
             transform: translateY(20px);
             transition: all 0.8s ease;
         }
 
-        .fade-in.active {
+        .fade-in-left {
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in-right {
+            opacity: 0;
+            transform: translateX(20px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.active,
+        .fade-in-up.active,
+        .fade-in-left.active,
+        .fade-in-right.active {
             opacity: 1;
-            transform: translateY(0);
+            transform: translate(0);
         }
 
         .marquee {
@@ -163,7 +184,7 @@
     </header>
 
     <!-- Hero Section -->
-    <section id="home" class="hero fade-in">
+    <section id="home" class="hero fade-in-left">
         <div class="container mx-auto px-4">
             <div class="max-w-2xl mx-auto">
                 <h1 class="text-4xl md:text-5xl font-bold mb-4">Professional Entertainment Programs</h1>
@@ -174,7 +195,7 @@
     </section>
 
     <!-- About Section -->
-    <section class="py-16 fade-in">
+    <section class="py-16 fade-in-right">
         <div class="container mx-auto px-4">
             <h2 class="section-title text-3xl font-bold text-center">About Us</h2>
             <div class="max-w-4xl mx-auto mt-8 grid md:grid-cols-2 gap-8">
@@ -193,7 +214,7 @@
     <!-- Services Section -->
     <section id="services" class="py-16 bg-gray-50 fade-in">
         <div class="container mx-auto px-4">
-            <h2 class="section-title text-3xl font-bold text-center">Our Services</h2>
+            <h2 class="section-title text-3xl font-bold text-center fade-in-left">Our Services</h2>
             <p class="text-center mb-12 max-w-2xl mx-auto">We offer a wide range of professional entertainment programs suitable for all occasions and events.</p>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -547,18 +568,33 @@
     <!-- Scrolling Animation Script -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Scroll animation for fade-in elements
-            const fadeElements = document.querySelectorAll('.fade-in');
-            
-            const fadeInObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('active');
-                    }
-                });
-            }, { threshold: 0.1 });
-            
-            fadeElements.forEach(el => { fadeInObserver.observe(el); });
+            // Animate elements on scroll
+            const animateOnIntersection = (element, animation, delay) => {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            setTimeout(() => {
+                                entry.target.classList.add('active');
+                            }, delay);
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.15 });
+
+                observer.observe(element);
+                return observer;
+            };
+
+            // Apply animations to all elements with animation classes
+            document.querySelectorAll('.fade-in, .fade-in-up, .fade-in-left, .fade-in-right').forEach((el, index) => {
+                animateOnIntersection(el, 'active', (index % 4) * 100);
+            });
+
+            // Special animation for cards with staggered delay
+            document.querySelectorAll('.service-card').forEach((card, index) => {
+                card.classList.add('fade-in-up');
+                animateOnIntersection(card, 'active', (index % 3) * 200);
+            });
             
             // Smooth scrolling for navigation links
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
