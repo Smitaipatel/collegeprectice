@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Professional Entertainment Programs</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      scroll-behavior: smooth;
+    }
+    .navbar {
+      background: #111;
+      color: rgb(8, 163, 247);
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .nav-menu {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+    .nav-menu li a {
+      color: rgb(237, 76, 76);
+      text-decoration: none;
+    }
+    section {
+      padding: 40px;
+      min-height: 100vh;
+    }
+    .scroll-section {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 1s ease, transform 1s ease;
+    }
+    .scroll-section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    select {
+      padding: 10px;
+      margin-top: 10px;
+    }
+    form input, form textarea {
+      display: block;
+      width: 300px;
+      margin-bottom: 10px;
+      padding: 8px;
+    }
+    form button {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+    }
+    footer {
+      background: #222;
+      color: white;
+      text-align: center;
+      padding: 15px;
+    }
+    .social-links a {
+      margin-right: 10px;
+      text-decoration: none;
+      color: #007bff;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <h1 class="logo">Entertainment Awareness</h1>
+      <ul class="nav-menu">
+        <li><a href="#profile">Profile</a></li>
+        <li><a href="#programs">Programs</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#brochure">Brochure</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="profile" class="scroll-section">
+    <h2>Profile</h2>
+    <p>Professional Entertainment Programs focused on public awareness through cultural and theatrical means.</p>
+    <p>Bio: Smit Patel - 10+ years of experience in entertainment and education awareness events.</p>
+    <div class="social-links">
+      <a href="#">Facebook</a>
+      <a href="#">Instagram</a>
+      <a href="#">YouTube</a>
+    </div>
+  </section>
+
+  <section id="programs" class="scroll-section">
+    <h2>Our Programs</h2>
+    <select id="programSelect">
+      <option value="drama">Professional Dramas</option>
+      <option value="street">Street Shows</option>
+    </select>
+    <div id="programContent" style="margin-top:20px;"></div>
+  </section>
+
+  <section id="gallery" class="scroll-section">
+    <h2>Gallery</h2>
+    <img src="assets/img/show1.jpg" alt="Performance Photo" width="200" />
+    <video width="300" controls>
+      <source src="assets/videos/performance.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </section>
+
+  <section id="brochure" class="scroll-section">
+    <h2>Brochure</h2>
+    <a href="brochure.pdf" target="_blank">Download Program List & Pricing (PDF)</a>
+  </section>
+
+  <section id="contact" class="scroll-section">
+    <h2>Contact & Feedback</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea placeholder="Your Feedback or Inquiry" required></textarea>
+      <button type="submit">Submit</button>
+    </form>
+    <p>Email: info@entertainmentgroup.com</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Entertainment Programs. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const content = {
+      drama: `<h3>Professional Dramas</h3><p>Stage-based social awareness dramas.</p>`,
+      street: `<h3>Street Shows</h3><ul><li>Drama Form</li><li>Bhavai</li><li>Composite Cultural Programs</li><li>Puppet Shows</li><li>Dayra</li><li>Garba</li><li>Orchestra</li><li>Lagna Geet</li></ul>`
+    };
+
+    const programSelect = document.getElementById("programSelect");
+    const programContent = document.getElementById("programContent");
+
+    programSelect.addEventListener("change", () => {
+      programContent.innerHTML = content[programSelect.value];
+    });
+    programContent.innerHTML = content["drama"];
+
+    // Scroll animation
+    const scrollSections = document.querySelectorAll(".scroll-section");
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    }, { threshold: 0.1 });
+
+    scrollSections.forEach(sec => observer.observe(sec));
+  </script>
+</body>
+</html>
