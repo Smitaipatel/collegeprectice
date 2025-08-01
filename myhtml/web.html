@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Professional Entertainment Programs</title>
+  <link rel="stylesheet" href="stylee.css" />
+</head>
+<body>
+  <header>
+    <h1>🎭 Entertainment Programs for Public Awareness</h1>
+    <nav>
+      <ul>
+        <li><a href="#profile">Profile</a></li>
+        <li><a href="#programs">Programs</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#brochure">Brochure</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="profile">
+    <h2>Our Profile</h2>
+    <p>We conduct awareness programs through entertainment like drama, puppet shows, and folk performances.</p>
+    <h3>Bio Data</h3>
+    <p>Founder: Smit Patel<br> Experience: 10+ years in cultural entertainment programs.</p>
+    <div class="social">
+      <a href="https://facebook.com" target="_blank">Facebook</a>
+      <a href="https://instagram.com" target="_blank">Instagram</a>
+      <a href="https://youtube.com" target="_blank">YouTube</a>
+    </div>
+  </section>
+
+  <section id="programs">
+    <h2>Our Programs</h2>
+    <ul>
+      <li onclick="showContent('drama')">1. Professional Dramas</li>
+      <li onclick="showContent('street')">2. Street Shows</li>
+    </ul>
+    <div id="content-area"></div>
+  </section>
+
+  <section id="gallery">
+    <h2>Gallery</h2>
+    <img src="assets/img/show1.jpg" alt="Show image" width="200" />
+    <video width="300" controls>
+      <source src="assets/videos/performance.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </section>
+
+  <section id="brochure">
+    <h2>Download Our Brochure</h2>
+    <p><a href="brochure.pdf" target="_blank">Click here to download brochure (PDF)</a></p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us / Feedback</h2>
+    <form>
+      <label>Name:</label><input type="text" required><br>
+      <label>Email:</label><input type="email" required><br>
+      <label>Message:</label><textarea required></textarea><br>
+      <button type="submit">Submit</button>
+    </form>
+    <p>Email: info@entertainmentgroup.com<br>Phone: +91 12345 67890</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Entertainment Programs. All rights reserved.</p>
+  </footer>
+
+  <script src="scriptt.js"></script>
+</body>
+</html>
