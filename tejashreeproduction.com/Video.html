@@ -4,11 +4,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Our Videos</title>
+  <style>
+        :root {
+            --primary: #1e3a8a;
+            --secondary: #3b82f6;
+            --dark: #111827;
+            --light: #f9fafb;
+        }
+        body { font-family: 'Roboto', sans-serif; background: var(--light); color: var(--dark); }
+        h1,h2,h3,h4 { font-family: 'Montserrat', sans-serif; }
+        .nav-link { transition: all 0.3s ease; }
+        .nav-link:hover { color: var(--secondary); }
+        .btn-primary { background: var(--primary); color: #fff; padding: 0.75rem 1.5rem; border-radius: 0.5rem; font-weight: 600; transition: 0.3s; }
+        .btn-primary:hover { background: var(--secondary); }
+        .service-card { background: #fff; border-radius: 1rem; box-shadow: 0 4px 10px rgba(0,0,0,0.08); transition: 0.3s; }
+        .service-card:hover { transform: translateY(-6px); box-shadow: 0 6px 18px rgba(0,0,0,0.15); }
+    </style>
 </head>
 <body>
   <h1>Video Gallery</h1>
   <nav class="hidden md:flex space-x-8 font-medium">
-    <a href="index2.html">Home</a> |
+    <a href="index2.html"class="nav-link">Home</a> |
   </nav>
 
   <section>
