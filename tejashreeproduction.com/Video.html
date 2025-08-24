@@ -3,6 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tejashree Production - Corporate & Cultural Entertainment</title>
+    <link rel="shortcut icon" href="img/logo2.png" type="image/x-icon" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
   <title>Our Videos</title>
   <style>
         :root {
@@ -11,6 +15,14 @@
             --dark: #111827;
             --light: #f9fafb;
         }
+        .topnav a {
+                  float: left;
+                  color: #f2f2f2;
+                  text-align: center;
+                  padding: 14px 16px;
+                  text-decoration: none;
+                  font-size: 17px;
+                  }
         body { font-family: 'Roboto', sans-serif; background: var(--light); color: var(--dark); }
         h1,h2,h3,h4 { font-family: 'Montserrat', sans-serif; }
         .nav-link { transition: all 0.3s ease; }
@@ -21,14 +33,25 @@
         .service-card:hover { transform: translateY(-6px); box-shadow: 0 6px 18px rgba(0,0,0,0.15); }
     </style>
 </head>
-<body>
-  <h1>Video Gallery</h1>
-  <nav class="hidden md:flex space-x-8 font-medium">
-    <a href="index2.html"class="nav-link">Home</a> |
-  </nav>
+
+<body class="overflow-x-hidden">
+ <header class="bg-white shadow-md sticky top-0 z-50">
+  <div class="container mx-auto px-6 flex justify-between items-center py-4">
+    <!-- Logo Left -->
+    <div class="flex items-center space-x-3">
+      <img src="img/logo2.png" alt="Logo" class="h-10">
+      <span class="font-bold text-xl text-gray-800">Tejashree Production</span>
+    </div>
+
+    <!-- Centered Nav -->
+    <nav class="hidden md:flex space-x-8 font-medium mx-auto">
+      <a href="index2.html" class="nav-link">Home</a>
+    </nav>
+  </div>
+</header>
 
   <section>
-    <h2>Performance for Awareness</h2>
+    <!--<h2>Performance for Awareness</h2>-->
                 <video width="520" height="440" controls>
                     <source src="videos/vido2.mp4" type="video/mp4">
                   </video>
@@ -58,5 +81,65 @@
       title="YouTube video player" frameborder="0" allowfullscreen>
     </iframe>
   </section>-->
+  <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate elements on scroll
+            const animateOnIntersection = (element, animation, delay) => {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            setTimeout(() => {
+                                entry.target.classList.add('active');
+                            }, delay);
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.15 });
+
+                observer.observe(element);
+                return observer;
+            };
+
+            // Apply animations to all elements with animation classes
+            document.querySelectorAll('.fade-in, .fade-in-up, .fade-in-left, .fade-in-right').forEach((el, index) => {
+                animateOnIntersection(el, 'active', (index % 4) * 100);
+            });
+
+            // Special animation for cards with staggered delay
+            document.querySelectorAll('.service-card').forEach((card, index) => {
+                card.classList.add('fade-in-up');
+                animateOnIntersection(card, 'active', (index % 3) * 200);
+            });
+            
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId.length > 1) {  // Skip if href is just #
+                        const targetElement = document.querySelector(targetId);
+                        if (targetElement) {
+                            window.scrollTo({
+                                top: targetElement.offsetTop - 80,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                });
+            });
+            
+            // Mobile menu toggle
+            const mobileMenuButton = document.querySelector('button.md\\:hidden');
+            if (mobileMenuButton) {
+                mobileMenuButton.addEventListener('click', function() {
+                    const navLinks = document.querySelector('nav .hidden.md\\:flex');
+                    if (navLinks) {
+                        navLinks.classList.toggle('hidden');
+                        navLinks.classList.toggle('flex');
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 </html>
