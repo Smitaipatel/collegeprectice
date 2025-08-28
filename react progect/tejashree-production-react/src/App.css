@@ -1,46 +1,30 @@
 :root {
-  --primary: #1e3a8a;
-  --secondary: #3b82f6;
-  --dark: #111827;
-  --light: #f9fafb;
+  --primary: #6d28d9;
+  --secondary: #a78bfa;
+  --dark: #1e293b;
+  --light: #f8fafc;
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
-  background: var(--light);
+  background-color: var(--light);
   color: var(--dark);
+  font-family: 'Poppins', sans-serif;
 }
 
-h1,h2,h3,h4 {
-  font-family: 'Montserrat', sans-serif;
-}
-
-.nav-link {
-  transition: all 0.3s ease;
-}
-.nav-link:hover {
-  color: var(--secondary);
-}
-
-.btn-primary {
-  background: var(--primary);
-  color: #fff;
-  padding: 0.75rem 1.5rem;
-  border-radius: 0.5rem;
-  font-weight: 600;
-  transition: 0.3s;
-}
-.btn-primary:hover {
-  background: var(--secondary);
+.section-title::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 4px;
+  background-color: var(--primary);
+  margin: 0.5rem auto 0;
+  border-radius: 2px;
 }
 
 .service-card {
-  background: #fff;
-  border-radius: 1rem;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-  transition: 0.3s;
+  transition: all 0.3s ease;
 }
 .service-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
 }

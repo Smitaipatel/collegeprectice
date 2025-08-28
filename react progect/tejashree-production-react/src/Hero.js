@@ -1,25 +1,36 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 function Hero() {
   return (
     <section
       id="home"
-      className="relative bg-cover bg-center h-[80vh] flex items-center justify-center text-center text-white"
+      className="hero min-h-[60vh] flex items-center justify-center text-center text-white bg-cover bg-center"
       style={{
         backgroundImage:
-          "linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/img/web110.png')",
+          "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/img/web100.png')",
       }}
     >
-      <div className="max-w-2xl px-4">
-        <h1 className="text-4xl md:text-5xl font-bold mb-6">
+      <motion.div
+        className="max-w-2xl mx-auto px-4"
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+      >
+        <h1 className="text-4xl md:text-5xl font-bold mb-4">
           Drama, Films and Cultural Events
         </h1>
         <p className="text-lg mb-8">
-          Delivering impactful performances that blend entertainment with
-          awareness for businesses, communities & organizations.
+          Raising public awareness through engaging entertainment experiences
+          across Gujarat
         </p>
-        <a href="#contact" className="btn-primary">Get in Touch</a>
-      </div>
+        <a
+          href="#contact"
+          className="bg-white text-purple-700 px-6 py-3 rounded-md font-medium hover:bg-opacity-90 transition"
+        >
+          Book Now
+        </a>
+      </motion.div>
     </section>
   );
 }
