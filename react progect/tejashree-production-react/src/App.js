@@ -1,25 +1,24 @@
-import React from "react";
-import Header from "./components/Header";
-import Hero from "./components/Hero";
-import About from "./components/About";
-import Services from "./components/Services";
-import Gallery from "./components/Gallery";
-import Contact from "./components/Contact";
-import Footer from "./components/Footer";
-import "./App.css";
+import React from 'react';
+import Header from './Header';
+import Hero from './Hero';
+import About from './About';
+import Services from './Services';
+import Gallery from './Gallery';
+import Contact from './Contact';
+import Footer from './Footer';
 
-function App() {
-  return (
-    <div className="overflow-x-hidden">
-      <Header />
-      <Hero />
-      <About />
-      <Services />
-      <Gallery />
-      <Contact />
-      <Footer />
-    </div>
-  );
-}
+const App = () => {
+    return (
+        <div className="overflow-x-hidden">
+            <Header />
+            <Hero />
+            <About />
+            <Services />
+            <Gallery />
+            <Contact />
+            <Footer />
+        </div>
+    );
+};
 
 export default App;
